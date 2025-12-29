@@ -62,14 +62,13 @@ console.log("--- ЗАВДАННЯ 13 (з *) ---");
 const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
 
 function countVowels(str, vowelsArray) {
-  let count = 0;
-  const text = str.toLowerCase();
-  for (let char of text) {
-    if (vowelsArray.includes(char)) {
-      count++;
-    }
-  }
-  return count;
+  return str
+    .toLowerCase()            
+    .split('')                
+    .filter(char => vowelsArray.includes(char)) 
+    .length;                  
 }
-console.log(countVowels('hello to you', vowels));
-console.log(countVowels('lorem ipsum dolor sit amet', vowels));
+
+
+console.log(countVowels('hello to you', vowels)); 
+console.log(countVowels('lorem ipsum dolor sit amet', vowels)); 
